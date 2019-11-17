@@ -78,7 +78,7 @@ if (isset($_POST['register']))
         $conn = null;
     }
     // the message
- $msg = 'Thank you for registering.\nWe have sent a verification email to the address provided<br><br>
+ $msg = 'Thank you for registering. We have sent a verification email to the address                provided<br>
         <a href="http://localhost:8080/Camagru/Controllers/verifyemail.php?vkey=.$vkey.">confirm</a>';
 // use wordwrap() if lines are longer than 70 characters
 $msg = wordwrap($msg,70);

@@ -53,7 +53,7 @@
     hieght :200%;
     overflow: hidden;
     width: 100%;">
-    <center><p style="display:inline; color:white"> &copy uisrael </p></center>
+    <center><p style="display:inline; color:white"> &copy </p></center>
 </div>
 </body>
 </html>

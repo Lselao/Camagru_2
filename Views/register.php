@@ -48,7 +48,7 @@ require_once '../Controllers/register.php';
                 </p>
             </div>
             <p>
-                Already a member? <a href="Login.php">Login</a>
+                Login here <a href="Login.php">Login</a>
             </p>
         </form>
         <center>
