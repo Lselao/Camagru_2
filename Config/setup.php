@@ -13,7 +13,7 @@
 
    
     //loginsystem connection
-    $sql = "camagru";
+    $sql = "USE camagru";
     $conn->exec($sql);
     $sql = "CREATE TABLE IF NOT EXISTS`users` (
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,

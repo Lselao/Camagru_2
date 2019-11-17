@@ -10,7 +10,7 @@
      <div class="input-group" style="margin-top: 100px;">  
         <center><p style='color: green'>Thank you for registering. We have sent a verification email to the address provided.
         <br>
-        please check your spam emails</p></center>
+        please check your emails</p></center>
     </div>
         
     </body>
