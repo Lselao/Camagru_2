@@ -1,0 +1,10 @@
+.booth {
+    width: 400;
+    /* height: 300; */
+    background: #ccc;
+    border: 10px solid #ddd;
+    margin: 0;
+}
+/* canvas{
+    display: none;
+} */
