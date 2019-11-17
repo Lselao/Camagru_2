@@ -18,16 +18,16 @@
 </head>
 <body>
 <ul>
-  <li><a href="fileUpload.php">Home</a></li>
-  <li><a href="edit.php">Edit Profile</a></li>
+  <li><a href="fileUpload.php">CAM</a></li>
+  <li><a href="edit.php">MY Profile</a></li>
   <li><a href="../Views/gallery.php">Gallery</a></li>
   <li style="float:right"><a class="active" href="../Controllers/logout.php">Logout</a></li>
 </ul>
     <div class="container">
-    <h1 class="text-center">Don't spoil the fun, take a picture now!</picture></h1>
+    <h1 class="text-center">SNAP CHAT!!😃 </picture></h1>
     
 <form action="../Controllers/fileUpload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
+    UPLOAD PICTURE:
     <input type="file" name="fileToUpload" id="fileToUpload" required>
     <input type="submit" value="Upload Image" name="upload">
 </form>

@@ -1,3 +1,5 @@
+/* text styling */
+
 * {
     margin: 0px;
     padding: 0px;
@@ -48,3 +50,53 @@ form {
     background: black;
     border-radius: 5px;
 }
+
+/* index styling */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 2px;
+    overflow: hidden;
+    background-color:black;
+    border-radius: 0px 0px 10px 10px;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+  .Camera {
+      width: 400px;
+      background-color: slategrey;
+      border: 10px solid #ddd;
+      margin: 30px auto 0px;
+  }
+
+  /* cam */
+
+  .booth {
+    width: 400;
+    /* height: 300; */
+    background: #ccc;
+    border: 10px solid #ddd;
+    margin: 0;
+}
+/* canvas{
+    display: none;
+} */
