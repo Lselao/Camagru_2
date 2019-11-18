@@ -1,5 +1,5 @@
 <?php
-   require 'connection.php';
+   require 'database.php';
    //if there's no database create it
     // $pdo = new PDO("mysql:host=localhost", $db_user, $db_password);
     // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

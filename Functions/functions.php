@@ -1,5 +1,5 @@
 <?php
-    require "../Config/connection.php";
+    require "../Config/database.php";
     
     function upload_image($username, $picture)
     {

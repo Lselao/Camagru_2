@@ -4,7 +4,7 @@ $db_driver = "mysql";
 $db_server = "localhost";
 $db_user = "root";
 $db_name = "camagru";
-$db_password = "";
+$db_password = "root1";
 
 try
 {

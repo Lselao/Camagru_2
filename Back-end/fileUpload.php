@@ -40,13 +40,13 @@
         
         //check if the image size is less than 5MB
         if ($_FILES["fileToUpload"]["size"] > 1000000) {
-            $_SESSION['error'] = "Sorry, your file is too large";
+            $_SESSION['error'] = "file too large";
             header("location: ../Forms/fileUpload.php");
         }
         
         // check if the image file type is the allowed one
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-            $_SESSION['error'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
+            $_SESSION['error'] = "Only JPG, JPEG, PNG files allowed.";
             header("location: ../Forms/fileUpload.php"); 
         }
 
@@ -55,7 +55,7 @@
             upload_image("username placeholder...", $pic_name);
             $_SESSION['error'] = "The file ". $pic_name . " has been uploaded.";
         } else {
-            $_SESSION['error'] = "Sorry, there was an error uploading your file.";
+            $_SESSION['error'] = "Error uploading file.";
         }
     }
 

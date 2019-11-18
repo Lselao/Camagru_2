@@ -5,7 +5,7 @@
     </head>
     <body>
         <div class="header">
-        <h2>Camagru Confimation</h2>
+        <h2>Confimation</h2>
         </div>
      <div class="input-group" style="margin-top: 100px;">  
         <center><p style='color: green'>You have successfully registering. Please check your email 

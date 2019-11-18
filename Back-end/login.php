@@ -7,7 +7,7 @@
 
   if (isset($_POST['login']))
   {
-    require("../Config/connection.php");
+    require("../Config/database.php");
     $username = $_POST["username"];
     $password = $_POST["password"];
 

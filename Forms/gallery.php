@@ -11,8 +11,8 @@
 </head>
 <body>
 <ul>
-  <li><a href="../Forms/fileUpload.php">Home</a></li>
-  <li><a href="edit.php">Edit Profile</a></li>
+  <li><a href="../Forms/fileUpload.php">CAM</a></li>
+  <li><a href="edit.php">MY Profile</a></li>
   <li><a href="gallery.php">Gallery</a></li>
   <li style="float:right"><a class="active" href="../Back-end/logout.php">Logout</a></li>
 </ul>

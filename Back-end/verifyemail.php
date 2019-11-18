@@ -1,11 +1,11 @@
 <?php
      session_start();
-    require '../Config/connection.php';
+    require '../Config/database.php';
     
 
    if (isset($_GET['vkey'])) {
        //Process Verification
-       $vkey = $_GET['vkey'];
+       echo $vkey = $_GET['vkey'];
        
     $sql = "SELECT verified , vkey FROM users WHERE verified = 0 AND vkey = ? LIMIT 1" ;
     $stmt= $conn->prepare($sql);
@@ -21,7 +21,7 @@
         $stmt->bindParam(1, $vkey);
         
         if ($stmt->execute()){
-            $_SESSION['message'] = "Account verified. you can login.";
+            $_SESSION['message'] = "Account verified.";
         }else{
             $_SESSION['message'] = "Account not loged in";
         }

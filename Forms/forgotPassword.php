@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['forgotPassword'])){
-        include_once('../Config/connection.php');
+        include_once('../Config/database.php');
         $mail = $_POST['email'];
     
         try{

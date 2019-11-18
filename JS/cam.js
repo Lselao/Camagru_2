@@ -20,7 +20,7 @@
         video.play();
     }, function(error){
         //An error occured
-        console.log('I don\'t want you to use my camera');
+        console.log('Something went wrong')
     });
 
     capture.addEventListener('click', function () {

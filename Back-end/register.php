@@ -1,5 +1,5 @@
 <?php
-    require("../Config/connection.php");
+    require("../Config/database.php");
         
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -23,7 +23,7 @@ if (isset($_POST['register']))
     // die(" ". . " " .);
 
     if (strlen($password) <= 5) {
-        echo  "Your Password Must Contain At Least 8 Characters!";
+        echo  "Password Must have 5 Characters or more!";
     }
 
     if (count($stmt->fetchAll()) > 0){
@@ -45,10 +45,10 @@ if (isset($_POST['register']))
         echo "missing information";
     }
     elseif(!preg_match("#[a-z]+#",$password)) {
-        echo "Your Password Must Contain At Least 1 Lowercase Letter!";
+        echo "Password Must Have 1 Lowercase Letter!";
     }
     elseif(!preg_match("#[A-Z]+#",$password)) {
-        $passwordErr = "Your Password Must Contain At Least 1 Capital Letter!";
+        $passwordErr = "Password Must have 1 Capital Letter!";
     }
     // elseif(!preg_match("#[0-9]+#",$password)) {
     //     $passwordErr = "Your Password Must Contain At Least 1 Number!";
@@ -78,8 +78,8 @@ if (isset($_POST['register']))
         $conn = null;
     }
     // the message
- $msg = 'Thank you for registering. We have sent a verification email to the address                provided<br>
-        <a href="http://localhost:8080/Camagru/Controllers/verifyemail.php?vkey=.$vkey.">confirm</a>';
+ $msg = "Registration Successul. We have sent a verification email to the address                provided<br>
+        <a href=http://localhost:8081/Camagru/Back-end/verifyemail.php?vkey=$vkey>confirm</a>";
 // use wordwrap() if lines are longer than 70 characters
 $msg = wordwrap($msg,70);
 // send email

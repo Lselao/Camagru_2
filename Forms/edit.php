@@ -1,7 +1,7 @@
 <?php
    session_start();
 
-require '../Config/connection.php';
+require '../Config/database.php';
 
 $username = $_POST['username'];
 $password = md5($_POST['passwd']);
@@ -39,10 +39,10 @@ if (isset($_POST['submit']))
 </head>
 <body>
 <ul>
-  <li><a href="../Forms/fileUpload.php">Home</a></li>
-  <li><a href="edit.php">Edit Profile</a></li>
+  <li><a href="../Forms/fileUpload.php">CAM</a></li>
+  <li><a href="edit.php">My Profile</a></li>
   <li><a href="gallery.php">Gallery</a></li>
-  <li style="float:right"><a class="active" href="../Views/login.php">Logout</a></li>
+  <li style="float:right"><a class="active" href="../Forms/login.php">Logout</a></li>
 </ul>
      
     </div>

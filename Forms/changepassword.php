@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 session_start();
 
 if(isset($_POST['reset'])){
-        require_once('../Config/connection.php');
+        require_once('../Config/database.php');
 
         $password = md5($_POST['password_1']);
         $password2 = md5($_POST['password_2']);
