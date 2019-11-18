@@ -10,7 +10,7 @@
 
         try{
             $stmt->execute([$username, $picture]);
-            echo "picture successfully added";
+            echo "successful";
         } 
         catch(Exception $ex) {
             die($ex->getMessage());
