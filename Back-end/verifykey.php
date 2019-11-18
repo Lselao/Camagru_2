@@ -12,13 +12,15 @@ require '../Config/database.php';
     $stmt->bindParam(1, $vkey);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    echo "Change your password your user_id is: ";
+    // echo "Change your password ";
+    // echo '</br><a href="../Forms/changepassword.php">Click here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+    header("Location:../Forms/changepassword.php");
     
-    if ($result)
-    {
-        $_SESSION['userid'] = $result['id'];  die($_SESSION['userid']);
-        header("Location:../Forms/changepassword.php");
+    // if ($result == TRUE)
+    // {
+    //     $_SESSION['userid'] = $result['id'];  die($_SESSION['userid']);
+    //     header("Location:../Forms/changepassword.php");
   
-    }
+    // }
  }
  ?>

@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <title>Imaging</title>
@@ -10,11 +12,19 @@
 
 </head>
 <body>
-<ul>
-  <li><a href="../Forms/fileUpload.php">CAM</a></li>
-  <li><a href="edit.php">MY Profile</a></li>
-  <li><a href="gallery.php">Gallery</a></li>
-  <li style="float:right"><a class="active" href="../Back-end/logout.php">Logout</a></li>
+<ul> 
+    <?php
+    if (isset($_SESSION['username']) && isset($_SESSION['email']))
+    {
+        echo "<li><a href='../Forms/fileUpload.php'>CAM</a></li>";
+        echo "<li><a href='edit.php'>MY Profile</a></li>";
+        echo "<li><a href='gallery.php'>Gallery</a></li>";
+        echo "<li style='float:right'><a class='active' href='../Back-end/logout.php'>Logout</a></li>";
+    }else
+    {
+        echo "<li><a href='login.php'>login</a></li>";
+    }
+  ?>
 </ul>
 <?php
     require ("../Functions/functions.php");
@@ -31,12 +41,6 @@
     }
    
 ?>
-
-
-
-
-
-
 </div>
 </body>
 </html> <?php

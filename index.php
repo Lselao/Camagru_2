@@ -1,5 +1,5 @@
 <?php 
     // require 'database.php';
     // require 'setup.php';
-header("Location: Forms/login.php"); 
+header("Location: Forms/gallery.php"); 
     die ();

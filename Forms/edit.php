@@ -22,6 +22,12 @@ if (isset($_POST['submit']))
      
   }
 
+$msg = "$username Your credidantials have been updated!";
+// use wordwrap() if lines are longer than 70 characters
+$msg = wordwrap($msg,70);
+// send email
+mail($email,"verify",$msg);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,13 +47,14 @@ if (isset($_POST['submit']))
 <ul>
   <li><a href="../Forms/fileUpload.php">CAM</a></li>
   <li><a href="edit.php">My Profile</a></li>
+  <li><a href="changepassword.php">change password</a></li>
   <li><a href="gallery.php">Gallery</a></li>
   <li style="float:right"><a class="active" href="../Forms/login.php">Logout</a></li>
 </ul>
      
     </div>
 <div id = "signup">
-        <form action= "editpro.php" method = "post" style="margin-top: 100px;">
+        <form action= "edit.php" method = "post" style="margin-top: 100px;">
              <img src = "../images/user.jpg" width = "300" height = "300">
             <p id = "errmsg">
             </p>

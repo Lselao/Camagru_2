@@ -27,7 +27,7 @@
         }
 
     }else{
-        $_SESSION['message'] = " Invalid account / acoount already verified";
+        $_SESSION['message'] = " Invalid account / acocunt already taken";
     }
    }
    else{

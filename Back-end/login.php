@@ -11,37 +11,39 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $password = md5($password);
-
      $error = NULL;
   
         if (empty($_POST["username"]) || empty($_POST["password"]))
         {
             $message = '<label>ALL fields are required</label>';
         }
-        else {
-            $sql = "SELECT * FROM users WHERE username = ? AND pass = ? AND verified = 1";
+        else 
+        {
+            $password = md5($password);
+            $sql = "SELECT * FROM users WHERE username = ? AND pass = ? AND verified = 1 LIMIT 1";
             $stmt= $conn->prepare($sql);
-            // $stmt->bindParam(':uname', $username);
-            // $stmt->bindParam(':pass', $password);
-            $stmt->execute([$username, $password]);
-            echo "<br> ";
-            
-           // $rot = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-            $count = $stmt->fetchAll();
-        
-             if(!empty($count))
+            $stmt->bindParam(1, $username);
+            $stmt->bindParam(2, $password);
+            $user = $stmt->fetch();
+            if ($stmt->rowCount() > 0)
             {
-                $_SESSION["username"] = $_POST["username"];
-                header("location:../Forms/fileUpload.php");
+                $_SESSION["login"]["id"] = $user["id"];
+                $_SESSION["login"]["email"] = $user["email"];
+                $_SESSION["login"]["username"] = $user["username"];
+                $_SESSION["username"] = $user["username"];
+                echo 'OK';
+                header("..Forms/gallery.php");
             }
-            else {
-                 $message = '<label>Wrong Data</label>';
-             }
+            else
+            {
+                echo "ERROR";
+            }
+            echo "<br>$username<br>$password";
         }
         $conn = null;
     }
 
 
 ?>
+
+

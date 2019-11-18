@@ -2,6 +2,10 @@
     session_start();
     echo $_SESSION['error'];
     $_SESSION['error'] = '';
+    if (!($_SESSION['username']) && !($_SESSION['email']))
+    {
+        header("Location:login.php");
+    }
 ?>
 
 <html>
@@ -32,14 +36,20 @@
 </form>
 
 <div class="booth">
-    <video id="video" width="400" hieght="300" autoplay></video>
-    <canvas id="canvas" width="400" hiegth="300"></canvas>
+    <video id="video" width="400" height="300" autoplay></video>
+    <canvas id="canvas" width="400" height="300"></canvas>
 </div>
 
 <form action="../Back-end/fileUpload.php" method="post">
     <input type="hidden" id="img" name="img">
     <input type="submit" id="cam_pic" name="cam_pic" value="Upload picture">
 </form>
+   <select name="stickers" id="stickers">
+        <option value="../stickers/bubbles.png">Bubbles</option>
+        <option value="../stickers/lips.png">Lips</option>
+        <option value="../stickers/squid.png">Squid</option>
+    </select>
+<button id="apply">Apply Sticker</button>
 
 <input type="submit" id="capture" name="capture" value="Capture">
 <input type="submit" id="clear" name="clear" value="Clear">

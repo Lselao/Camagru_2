@@ -76,14 +76,16 @@ if (isset($_POST['register']))
         }
         $stmt = null;
         $conn = null;
+
+        // the message
+        $msg = "Registration Successul. We have sent a verification email to the address provided<br>
+        <a href=http://localhost:8081/Camagru_2/Back-end/verifyemail.php?vkey=$vkey>confirm</a>";
+        // use wordwrap() if lines are longer than 70 characters
+        $msg = wordwrap($msg,70);
+        // send email
+        mail($email,"verify",$msg);
     }
-    // the message
- $msg = "Registration Successul. We have sent a verification email to the address                provided<br>
-        <a href=http://localhost:8081/Camagru/Back-end/verifyemail.php?vkey=$vkey>confirm</a>";
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
-// send email
-mail($email,"verify",$msg);
+    
 }
 
 ?>  

@@ -5,6 +5,9 @@
     video = document.getElementById('video'),
     capture = document.getElementById('capture'),
     pic = document.getElementById('img');
+    //getting value of the button
+    apply = document.getElementById('apply');
+
 
     navigator.getMedia = navigator.getUserMedia ||
                          navigator.webkitGetUserMedia ||
@@ -27,7 +30,14 @@
         context.drawImage(video, 0, 0, 400, 300);
         pic.value = canvas.toDataURL('uploads/jpeg');
     }, false);
-
+    //applying the sticker to the canvas
+    apply.addEventListener('click', function () {
+        var sticker = document.getElementById('stickers').value;
+        if (sticker == bubbles)
+        else if (sticker == lips)
+        else
+        context.drawImage(sticker, 0, 0, 80, 80);
+    })
     document.getElementById('clear').addEventListener('click', function () {
         context.clearRect(0, 0, canvas.width, canvas.height);
     });
