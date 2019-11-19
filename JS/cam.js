@@ -1,21 +1,19 @@
+
+canvas = null;
+
 (function(){
     
-    var canvas = document.getElementById('canvas'),
+    canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
     video = document.getElementById('video'),
     capture = document.getElementById('capture'),
     pic = document.getElementById('img');
-    //getting value of the button
-    apply = document.getElementById('apply');
-
-
     navigator.getMedia = navigator.getUserMedia ||
                          navigator.webkitGetUserMedia ||
                          navigator.mozGetUserMedia ||
                          navigator.msGetUserMedia;
-
     navigator.getMedia({
-        video: true,
+        video: { width: 400, height: 300 },
         audio: false
         
     }, function(stream){
@@ -23,23 +21,33 @@
         video.play();
     }, function(error){
         //An error occured
-        console.log('Something went wrong')
+        console.log('Something went wrong');
     });
-
     capture.addEventListener('click', function () {
         context.drawImage(video, 0, 0, 400, 300);
         pic.value = canvas.toDataURL('uploads/jpeg');
     }, false);
-    //applying the sticker to the canvas
-    apply.addEventListener('click', function () {
-        var sticker = document.getElementById('stickers').value;
-        if (sticker == bubbles)
-        else if (sticker == lips)
-        else
-        context.drawImage(sticker, 0, 0, 80, 80);
-    })
     document.getElementById('clear').addEventListener('click', function () {
         context.clearRect(0, 0, canvas.width, canvas.height);
     });
     
 })();
+function stickers(path) {
+    var sticker = new Image();
+    var width = video.offsetWidth, height = video.offsetHeight;
+    sticker.src = path;
+    if (canvas) {
+        contxt = canvas.getContext('2d');
+        contxt.drawImage(sticker, 0, 0, width, height);
+        pic.value = canvas.toDataURL('image/png');
+        if (!(document.getElementById("img"))) {
+            var elem = document.createElement("img");
+            elem.setAttribute("src", sticker.src);
+            document.getElementById("stickers").appendChild(elem);
+        }
+        else {
+            var elem = document.createElement("img");
+            elem.setAttribute("src", "images/hydrangeas.jpg");
+        }
+    }
+};

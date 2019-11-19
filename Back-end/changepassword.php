@@ -1,5 +1,5 @@
 <?php
-     ini_set('display_errors', 1);
+    ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     session_start();
@@ -9,13 +9,12 @@
 
             $password = md5($_POST['password_1']);
             $password2 = md5($_POST['password_2']);
-            $id = $_SESSION['userid'];
             if ($password == $password2){
-                $sql = "UPDATE users SET pass = ? WHERE id= ?";
+                $sql = "UPDATE users SET pass = ? WHERE vkey= ?";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(1, $password);
-                $stmt->bindParam(1, $id);
-                $result = $stmt->execute([$password,$id]);
+                $stmt->bindParam(1, $vkey);
+                $result = $stmt->execute([$password,$vkey]);
                 header("Location: ../Forms/login.php");
             }
             else  

@@ -14,7 +14,7 @@ require '../Config/database.php';
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     // echo "Change your password ";
     // echo '</br><a href="../Forms/changepassword.php">Click here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-    header("Location:../Forms/changepassword.php");
+    header("Location:../Forms/changepassword.php?vkey=$vkey");
     
     // if ($result == TRUE)
     // {

@@ -6,11 +6,19 @@
     // $sql = "CREATE DATABASE IF NOT EXISTS registration";
     // $pdo->exec($sql);
 
-    $conn = new PDO("$db_driver:host=$db_server;dbname=$db_name", $db_user, $db_password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "CREATE DATABASE IF NOT EXISTS camagru";
-    $conn->exec($sql);
-
+    try {
+        $conn = new PDO("mysql:host=$db_server", $db_user, $db_password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "CREATE DATABASE camagru";
+        // use exec() because no results are returned
+        $conn->exec($sql);
+        echo "Database created successfully<br>";
+        }
+    catch(PDOException $e)
+        {
+        echo $sql . "<br>" . $e->getMessage();
+        }
    
     //loginsystem connection
     $sql = "USE camagru";
@@ -47,6 +55,6 @@
     )";
     $conn->exec($sql);
 
-    header("Location: ../index.php");
+    header("Location: ../Forms/login.php");
     
 ?>

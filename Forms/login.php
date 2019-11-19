@@ -47,7 +47,7 @@ if (isset($_POST['login']))
 ?>
 <html>
     <head>
-    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Camagru | Login</title>
         

@@ -32,7 +32,7 @@ mail($email,"verify",$msg);
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 
@@ -62,7 +62,7 @@ mail($email,"verify",$msg);
             <br/>
             <input  type= "email" name="email" placeholder="example@domain.com" required/>
             <br/>
-            <input  type= "password" name="passwd" placeholder="P******" required/>
+            <input  type= "password" name="passwd" placeholder="Password" required/>
             <br/>
     
             <input  type= "submit" name="submit" value = "Save"/>

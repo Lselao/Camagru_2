@@ -2,5 +2,5 @@
 session_start();
 unset($_SESSION["id"]);
 unset($_SESSION["username"]);
-header("Location:../Forms/login.php");
+header("Location:../Views/login.php");
 ?>

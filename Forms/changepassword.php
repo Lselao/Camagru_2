@@ -1,9 +1,17 @@
-<?php  require '../Back-end/changepassword.php';  ?>
+<?php
+    if (isset($_GET['vkey']))
+    {
+        $vkey = $_GET['vkey'];
+    }
+
+require '../Back-end/changepassword.php'; 
+
+?>
 
 <html>
     <head>
         <title>Camagru | Changepassword</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
     </head>
     <body>
         <div class="header">
@@ -11,11 +19,11 @@
         </div>
 
         <div class = "form">
-        <form method="post" action="../back-end/changepassword.php">
+        <form method="post" action="">
         
             <div class="input-group">
                 <label>New Password</label>
-                <input type="text" name="password_1" placeholder="Enter New Password..."required>
+                <input type="password" name="password_1" placeholder="Enter New Password..."required>
             </div>
             
             <div class="input-group">
