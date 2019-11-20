@@ -50,9 +50,9 @@ if (isset($_POST['register']))
     elseif(!preg_match("#[A-Z]+#",$password)) {
         $passwordErr = "Password Must have 1 Capital Letter!";
     }
-    // elseif(!preg_match("#[0-9]+#",$password)) {
-    //     $passwordErr = "Your Password Must Contain At Least 1 Number!";
-    // }
+    elseif(!preg_match("#[0-9]+#",$password)) {
+        $passwordErr = "Your Password Must Contain At Least 1 Number!";
+    }
 
     else
     {
@@ -79,7 +79,7 @@ if (isset($_POST['register']))
 
         // the message
         $msg = "Registration Successul. We have sent a verification email to the address provided<br>
-        <a href=http://localhost:8081/Camagru_2/Back-end/verifyemail.php?vkey=$vkey>confirm</a>";
+        <a href=http://localhost:8080/Camagru_2/Back-end/verifyemail.php?vkey=$vkey>confirm</a>";
         // use wordwrap() if lines are longer than 70 characters
         $msg = wordwrap($msg,70);
         // send email

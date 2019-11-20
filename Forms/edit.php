@@ -1,10 +1,8 @@
-<?php
-   session_start();
 
-if (!issset($_SESSION['login']))
-{
-    header('location: login.php');
-}
+<?php
+
+ echo $_SESSION['error'];
+ $_SESSION['error'] = '';
 
 require '../Config/database.php';
 
@@ -51,16 +49,15 @@ mail($email,"verify",$msg);
 <body>
 <ul>
   <li><a href="../Forms/fileUpload.php">CAM</a></li>
-  <li><a href="edit.php">My Profile</a></li>
-  <li><a href="changepassword.php">change password</a></li>
-  <li><a href="gallery.php">Gallery</a></li>
+  <li><a href="edit.php">MY PROFILE</a></li>
+  <li><a href="gallery.php">GALLERY</a></li>
   <li style="float:right"><a class="active" href="../Forms/login.php">Logout</a></li>
 </ul>
      
     </div>
 <div id = "signup">
         <form action= "edit.php" method = "post" style="margin-top: 100px;">
-             <img src = "../images/user.jpg" width = "300" height = "300">
+             <!-- <img src = "../images/user.jpg" width = "300" height = "300"> -->
             <p id = "errmsg">
             </p>
             <input  type= "text" name="username" placeholder="Username" required/>

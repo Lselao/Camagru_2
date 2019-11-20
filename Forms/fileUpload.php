@@ -28,7 +28,7 @@
 
 <ul>
   <li><a href="fileUpload.php">CAM</a></li>
-  <li><a href="edit.php">PROFILE</a></li>
+  <li><a href="edit.php">MY PROFILE</a></li>
   <li><a href="../Forms/gallery.php">GALLERY</a></li>
   <li style="float:right"><a class="active" href="../Back-end/logout.php">Logout</a></li>
 </ul>

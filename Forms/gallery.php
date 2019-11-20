@@ -1,9 +1,19 @@
 <html>
 <?php
 
+// logout
+if(!isset($_SESSION))
+{
+    session_start();
+}
+if (!isset($_SESSION["login"]["username"]))
+{
+    echo '<script>window.location= "login.php"</script>';
+}
+
 require ("../Back-end/register.php");
 require("../Config/database.php");
-session_start();
+
 if (isset($_SESSION['login']))
 {
     $login_id = $_SESSION['login']['id'];
@@ -25,8 +35,8 @@ if (isset($_SESSION['login']))
 <body class="b1">
 <ul>
   <li><a href="../Forms/fileUpload.php">CAM</a></li>
-  <li><a href="edit.php">My Profile</a></li>
-  <li><a href="gallery.php">Gallery</a></li>
+  <li><a href="edit.php">MY PROFILE</a></li>
+  <li><a href="gallery.php">GALLERY</a></li>
   <li style="float:right"><a class="active" href="../Back-end/logout.php">Logout</a></li>
 </ul>
 <?php
@@ -48,7 +58,7 @@ if (isset($_SESSION['login']))
         else
         {
             require("../Config/database.php");
-            $sql = "INSERT INTO comments (username, image_id, comment) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO comments (id, comments) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $login_username);
             $stmt->bindParam(2, $img_id);
@@ -57,9 +67,9 @@ if (isset($_SESSION['login']))
         }
     // $stmt = null;
     // $conn = null;
-    $msg = "$username Updated Success!";
-    $msg = wordwrap($msg,70);
-    mail($email,"verify",$msg);
+    // $msg = "$username Updated Success!";
+    // $msg = wordwrap($msg,70);
+    // mail($email,"verify",$msg);
 
     }
     
@@ -75,9 +85,9 @@ if (isset($_SESSION['login']))
         if ($login_username)
         {
             require("../Config/database.php");
-            $sql = "INSERT INTO camagru.likes (username, image_id) VALUES (?, ?)";
+            $sql = "INSERT INTO likes (img_id) VALUES (?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(1, $login_username);
+            $stmt->bindParam(1, $login_username);echo $img_id;
             $stmt->bindParam(2, $img_id);
             $stmt->execute();
         }
@@ -88,7 +98,7 @@ if (isset($_SESSION['login']))
     function display_comment($comment_id)
     {
         require ("../Config/database.php");
-        $sql = "SELECT * FROM comments WHERE image_id = ?";
+        $sql = "SELECT * FROM comments WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1, $comment_id);
         $stmt->execute();
@@ -105,7 +115,7 @@ if (isset($_SESSION['login']))
     function count_likes($like_id)
     {
         require ("../Config/database.php");
-        $sql = "SELECT * FROM likes WHERE image_id = ?";
+        $sql = "SELECT * FROM likes WHERE img_id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1, $like_id);
         $stmt->execute();
@@ -116,11 +126,11 @@ if (isset($_SESSION['login']))
 <img class="pic" src="<?php echo $image['picture']; ?>" alt=""><br>
 <form method="post" action="?img_id=<?php echo $image['id']; ?>">
     <textarea name="comment" class="comme" cols="20" rows="5"></textarea><br>
-    <!-- <input class="comme" type="text" name="comment" placeholder="type comment here ..."><br> -->
+    <input class="comme" type="text" name="comment" placeholder="type comment here ..."><br>
     <button  name="submit_comment" type="submit">submit comment</button>
     <?php count_likes($image['id']); ?>
     <button class="b2" type="submit" name="like">like</button>
-    <button class="b2" type="submit" name="del">Delete</button><br>
+    <button class="b2" type="submit" name="del">Delete </button><br>
 </form>
 <?php display_comment($image['id']) ?>
 <?php endforeach; ?>

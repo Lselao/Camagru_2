@@ -11,7 +11,7 @@
             //echo $result;
             if($result){
                 $vkey = $result['vkey'];
-                $msg = "click the link verifiy your account : http://localhost:8081/Camagru_2/Back-end/verifykey.php?vkey=$vkey";
+                $msg = "click the link verifiy your account : http://localhost:8080/Camagru_2/Back-end/verifykey.php?vkey=$vkey";
             
                 $headers = array('From: noreply');
         
