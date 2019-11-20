@@ -58,7 +58,7 @@ if (isset($_SESSION['login']))
         else
         {
             require("../Config/database.php");
-            $sql = "INSERT INTO comments (id, comments) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO comments (`user`,img, comments) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $login_username);
             $stmt->bindParam(2, $img_id);
@@ -85,9 +85,9 @@ if (isset($_SESSION['login']))
         if ($login_username)
         {
             require("../Config/database.php");
-            $sql = "INSERT INTO likes (img_id) VALUES (?, ?)";
+            $sql = "INSERT INTO camagru.likes (`user_id`, img_id) VALUES (?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(1, $login_username);echo $img_id;
+            $stmt->bindParam(1, $login_id);
             $stmt->bindParam(2, $img_id);
             $stmt->execute();
         }
@@ -95,20 +95,22 @@ if (isset($_SESSION['login']))
 }
 
 
-    function display_comment($comment_id)
+    function display_comment($comment_id) 
     {
+        
         require ("../Config/database.php");
-        $sql = "SELECT * FROM comments WHERE id = ?";
+        $sql = "SELECT * FROM comments WHERE img = ?"; 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1, $comment_id);
         $stmt->execute();
-        $comments = $stmt->fetchAll();
+        // $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $comments = $stmt->fetchall(); 
         if ($stmt->rowCount() > 0)
         {
             foreach($comments as $comment)
             {
-                echo "<h5>".$comment['username']."</h5>";
-                echo "<p>".$comment['comment']."</p>";
+                echo "<h5>".$comment['user']."</h5>";
+                echo "<p>".$comment['comments']."</p>";
             }
         }
     }
@@ -132,7 +134,9 @@ if (isset($_SESSION['login']))
     <button class="b2" type="submit" name="like">like</button>
     <button class="b2" type="submit" name="del">Delete </button><br>
 </form>
-<?php display_comment($image['id']) ?>
+
+<?php display_comment($image['id']);?>
+
 <?php endforeach; ?>
  
 </body>

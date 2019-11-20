@@ -17,11 +17,13 @@
         }
     }
 
+    
+
     function getAllImages()
     {
         global $conn;
         
-        $sql = "SELECT * FROM images ORDER BY upload_date";
+        $sql = "SELECT * FROM images ORDER BY upload_date DESC";
         $stmt= $conn->prepare($sql);
 
         try{
