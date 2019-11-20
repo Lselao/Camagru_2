@@ -1,35 +1,44 @@
 
 <?php
+session_start();
 
- echo $_SESSION['error'];
- $_SESSION['error'] = '';
+//  echo $_SESSION['error'];
+//  $_SESSION['error'] = '';
 
 require '../Config/database.php';
 
 $username = $_POST['username'];
 $password = md5($_POST['passwd']);
 $email = $_POST['email'];
-
+$user_id = $_SESSION["login"]["id"];
 
 if (isset($_POST['submit']))
   {
-        $uname = $_SESSION['username'];
-        $sql = "UPDATE users SET username = :uname, pass = :pass, email = :email WHERE username = :username";
+      try{
+        $sql = "UPDATE users SET `username` = '$username', `pass` = '$password', `email` = '$email' WHERE id = ?";
         $stmt= $conn->prepare($sql);
-            $stmt->bindParam(':uname', $username);
-            $stmt->bindParam(':pass', $password);
-             $stmt->bindParam(':email', $email);
-             $stmt->bindparam(':username', $uname);
+            // $stmt->bindParam(':uname', $username);
+            // $stmt->bindParam(':pass', $password);
+            //  $stmt->bindParam(':email', $email);
+            //  $stmt->bindparam(':username', $username);
+             $stmt->bindParam(1, $user_id);
             $stmt->execute();
             echo "<br> "; 
      
-  }
+  
 
-$msg = "$username Your credidantials have been updated!";
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
-// send email
-mail($email,"verify",$msg);
+        $msg = "$username Your credidantials have been updated!";
+        // use wordwrap() if lines are longer than 70 characters
+        $msg = wordwrap($msg,70);
+        // send email
+        mail($email,"verify",$msg);
+        echo "$username Your credidantials have been updated check your email";
+      }
+      catch(PDOException $e)
+      {
+          echo "Error".$e;
+      }
+    }
 
 ?>
 <!DOCTYPE html>
