@@ -1,5 +1,13 @@
 <?php
-    session_start();
+
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
+    if (!isset($_SESSION["login"]["username"]))
+    {
+        echo '<script>window.location= "login.php"</script>';
+    }
     echo $_SESSION['error'];
     $_SESSION['error'] = '';
 ?>
@@ -34,11 +42,10 @@
 <script src="../JS/cam.js"></script>
 <div class="input-group" style="text-align:center;">
     <div class="container2" style="display:inline-block;">
-    <button onclick="stickers('../stickers/bubbles.png')" class="btn">bubbles</button>
-    <button onclick="stickers('../stickers/lips.png')" class="btn">lips</button>
+    <button onclick= "stickers('../stickers/bubbles.png')" class="btn">bubbles</button>
+    <button onclick=" stickers('../stickers/lips.jpeg')" class="btn">lips</button>
     <button onclick="stickers('../stickers/squid.png')" class="btn">squid</button>
 </div>
-
 
 <div class="booth">
     <video id="video" width="400" height="300" autoplay></video>
@@ -69,6 +76,7 @@
 </form>
 <?php endforeach; ?>
 <script src="../JS/cam.js"></script>
+<script src="../JS/sticker.js"></script>
 </div>
 
 </body>

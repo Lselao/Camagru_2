@@ -1,6 +1,11 @@
 <?php
    session_start();
 
+if (!issset($_SESSION['login']))
+{
+    header('location: login.php');
+}
+
 require '../Config/database.php';
 
 $username = $_POST['username'];

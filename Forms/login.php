@@ -1,6 +1,6 @@
-<?php
-
+<?php   
 session_start();
+
 if (isset($_POST['login']))
 {
     $user = $_POST['username'];
@@ -21,7 +21,7 @@ if (isset($_POST['login']))
         $stmt->execute();
         if ($stmt->rowCount() > 0)
         {
-            unset($_SESSION['login']);
+            // unset($_SESSION['login']);
             $user = $stmt->fetch();
             if ($user['verified'] == 0)
             {
