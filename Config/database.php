@@ -1,11 +1,12 @@
 <?php
+// connecting to db
 
-$db_driver = "mysql";
 $db_server = "localhost";
 // $db_user = "home";
 $db_user = "root";
 $db_name = "camagru";
 $db_password = "root1";
+$db_driver = "mysql";
 
 try
 {
@@ -17,3 +18,4 @@ catch(PDOException $e)
     echo "Connection failed: " . $e->getMessage();
 }
 ?>
+

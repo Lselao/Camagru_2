@@ -1,7 +1,7 @@
 <html>
 <?php
 
-// logout
+// end session when logout
 if(!isset($_SESSION))
 {
     session_start();
@@ -65,11 +65,6 @@ if (isset($_SESSION['login']))
             $stmt->bindParam(3, $comment);
             $stmt->execute();
         }
-    // $stmt = null;
-    // $conn = null;
-    // $msg = "$username Updated Success!";
-    // $msg = wordwrap($msg,70);
-    // mail($email,"verify",$msg);
 
     }
     
@@ -127,7 +122,7 @@ if (isset($_SESSION['login']))
 <?php foreach($image_array as $image): ?>
 <img class="pic" src="<?php echo $image['picture']; ?>" alt=""><br>
 <form method="post" action="?img_id=<?php echo $image['id']; ?>">
-    <textarea name="comment" class="comme" cols="20" rows="5"></textarea><br>
+    <!-- <textarea name="comment" class="comme" cols="20" rows="5"></textarea><br> -->
     <input class="comme" type="text" name="comment" placeholder="type comment here ..."><br>
     <button  name="submit_comment" type="submit">submit comment</button>
     <?php count_likes($image['id']); ?>

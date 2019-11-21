@@ -1,7 +1,7 @@
 <?php 
 require_once '../Back-end/register.php';
      $_SESSION['id'] = 1;
-    // SESSION_START();
+    
     $error = NULL;
 ?>
 <!DOCTYPE html>

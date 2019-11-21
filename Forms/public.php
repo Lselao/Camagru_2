@@ -10,7 +10,7 @@ require("../Config/database.php");
         <link rel="stylesheet" type="text/css" href="../style.css">
         <h2 Cclass="HEAD">
             <?php
-            // echo "<h2>".$login_username."</h2>"; 
+            
             ?>
         </h2>
         <title>Imaging</title>

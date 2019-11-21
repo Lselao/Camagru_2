@@ -1,17 +1,12 @@
 <?php
    require 'database.php';
-   //if there's no database create it
-    // $pdo = new PDO("mysql:host=localhost", $db_user, $db_password);
-    // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // $sql = "CREATE DATABASE IF NOT EXISTS registration";
-    // $pdo->exec($sql);
+   
 
     try {
         $conn = new PDO("mysql:host=$db_server", $db_user, $db_password);
-        // set the PDO error mode to exception
+        
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "CREATE DATABASE camagru";
-        // use exec() because no results are returned
         $conn->exec($sql);
         echo "Database created successfully<br>";
         }
@@ -20,7 +15,7 @@
         echo $sql . "<br>" . $e->getMessage();
         }
    
-    //loginsystem connection
+    
     $sql = "USE camagru";
     $conn->exec($sql);
     $sql = "CREATE TABLE IF NOT EXISTS`users` (
@@ -32,6 +27,7 @@
     `verified` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '0',
     `createdate` timestamp NULL DEFAULT CURRENT_TIMESTAMP
     )";
+
     $conn->exec($sql);
     $sql = "CREATE TABLE IF NOT EXISTS `comments` (
         `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
@@ -39,6 +35,7 @@
         `img`  varchar(255) NOT NULL,
         `comments` varchar(255) NOT NULL
     )";
+    
     $conn->exec($sql);
     $sql = "CREATE TABLE IF NOT EXISTS likes (
         `id` INT(11) AUTO_INCREMENT PRIMARY KEY,

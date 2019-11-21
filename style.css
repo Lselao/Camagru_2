@@ -1,17 +1,16 @@
-/* text styling */
-
+/* 
 * {
     margin: 0px;
     padding: 0px;
 }
 body {
     font-size: 120%;
-    background: #F8F8FF;
+    background:black;
 }
 .header {
     width: 30%;
     margin: 50px auto 0px;
-    color: white;
+    color:black;
     background: black;
     text-align: center;
     border: 1px solid #B0C4DE;
@@ -24,7 +23,7 @@ form {
     margin: 0px auto;
     padding: 20px;
     border: 1px solid #B0C4DE;
-    background: white;
+    background: orange;
     border-radius: 0px 0px 10px 10px;
 }
 .input-group {
@@ -53,7 +52,7 @@ form {
 
 /* index styling */
 
-ul {
+/* ul {
     list-style-type: none;
     margin: 0;
     padding: 2px;
@@ -70,8 +69,8 @@ ul {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    padding: 13px 14px;
+    /* text-decoration: none; */
   }
   
   li a:hover:not(.active) {
@@ -79,12 +78,12 @@ ul {
   }
   
   .active {
-    background-color: #4CAF50;
+    background-color: red;
   }
   .Camera {
       width: 400px;
-      background-color: slategrey;
-      border: 10px solid #ddd;
+      background-color: grey;
+      border: 10px solid rebeccapurple;
       margin: 30px auto 0px;
   }
 
@@ -93,18 +92,17 @@ ul {
   bottom: 0;
   left: 0;
   height :200%;
-  overflow: hidden;
   width: 100%;
   }
 
   /* cam */
 
-  .booth {
+    .booth {
     width: 400;
     /* height: 300; */
     background: #ccc;
     border: 10px solid #ddd;
-    margin: 0;
+    margin: 0; */
 }
 /* canvas{
     display: none;

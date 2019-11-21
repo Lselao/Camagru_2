@@ -22,9 +22,7 @@ if (isset($_POST['submit_comment']))
     $stmt = null;
     $conn = null;
 $msg = "$username Your Credidantials have been updated!";
-// use wordwrap() if lines are longer than 70 characters
 $msg = wordwrap($msg,70);
-// send email
 mail($email,"verify",$msg);
 }
 ?>

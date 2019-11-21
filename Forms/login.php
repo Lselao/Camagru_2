@@ -54,7 +54,7 @@ if (isset($_POST['login']))
     </head>
     <body class="b123"> 
     <ul>
-        <!-- <li><a style="color: white" href="public.php">Gallery</a></li> -->
+        <li><a style="color: white" href="public.php">Gallery</a></li>
     </ul>
         <div class="header">
         <h2>Camagru Login</h2>

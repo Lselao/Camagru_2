@@ -47,6 +47,8 @@
     <button onclick="stickers('../stickers/squid.png')" class="btn">squid</button>
 </div>
 
+<a href="https://en-gb.facebook.com/login/">facebook</a>
+
 <div class="booth">
     <video id="video" width="400" height="300" autoplay></video>
     <canvas id="canvas" width="400" height="300"></canvas>
