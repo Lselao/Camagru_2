@@ -60,9 +60,7 @@ if (isset($_POST['ch_user']))
             
              $stmt->bindParam(1, $user_id);
             $stmt->execute();
-            echo "<br> "; 
-     
-  
+            echo "<br> ";
 
         $msg = "$username Your Eamil have been updated!";
         
@@ -155,31 +153,31 @@ if (isset($_POST['ch_user']))
     </div>
 <div id = "signup">
         <form action= "edit.php" method = "post" style="margin-top: 100px;">
-             <!-- <img src = "../images/user.jpg" width = "300" height = "300"> -->
+            
             <p id = "errmsg">
             </p>
-            <input  type= "text" name="username" placeholder="Username" required/>
+            <input  type= "text" name="username" placeholder="Username "required maxlength="20" minlength="3"/>
            
             <input  type= "submit" name="ch_user" value = "Save"/>
         </form>
 
         <form action= "edit.php" method = "post" style="margin-top: 100px;">
-             <!-- <img src = "../images/user.jpg" width = "300" height = "300"> -->
+            
             <p id = "errmsg">
             </p>
-            <input  type= "email" name="email" placeholder="example@domain.com" required/>
+            <input  type= "email" name="email" placeholder="example@domain.com "required maxlength="40" minlength="3"/>
             <br/>
             <input  type= "submit" name="ch_email" value = "Save"/>
         </form>
 
         <form action= "edit.php" method = "post" style="margin-top: 100px;">
-             <!-- <img src = "../images/user.jpg" width = "300" height = "300"> -->
+            
             <p id = "errmsg">
             </p>
-            <input  type= "password" name="passwd" placeholder="Password" required/>
+            <input  type= "password" name="passwd" placeholder="Password "required maxlength="40" minlength="3"/>
             <br/>
           
-            <input  type= "password" name="passwd_con" placeholder="Password" required/>
+            <input  type= "password" name="passwd_con" placeholder="Password "required maxlength="40" minlength="3"/>
             <br/>
             <input  type= "submit" name="ch_pass" value = "Save"/>
         </form>
