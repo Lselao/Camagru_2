@@ -4,25 +4,6 @@ ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-// end session when logout
-if(!isset($_SESSION))
-{
-    session_start();
-}
-if (!isset($_SESSION["login"]["username"]))
-{
-    echo '<script>window.location= "login.php"</script>';
-}
-
-require ("../Back-end/register.php");
-require("../Config/database.php");
-
-if (isset($_SESSION['login']))
-{
-    $login_id = $_SESSION['login']['id'];
-    $login_username = $_SESSION['login']['username'];
-}
-
 ?>
 <html>
     <head>
@@ -37,10 +18,10 @@ if (isset($_SESSION['login']))
 </head>
 <body class="b1">
 <ul>
-  <li><a href="../Forms/fileUpload.php">CAM</a></li>
-  <li><a href="edit.php">MY PROFILE</a></li>
-  <li><a href="gallery.php">GALLERY</a></li>
-  <li style="float:right"><a class="active" href="../Back-end/logout.php">Logout</a></li>
+  <li><a href="p_gallery.php">GALLERY</a></li>
+  <li><a href="login.php">LOGIN</a></li>
+
+
 </ul>
 <?php
 
@@ -125,12 +106,9 @@ if (isset($_SESSION['login']))
 <?php foreach($image_array as $image): ?>
 <img class="pic" src="<?php echo $image['picture']; ?>" alt=""><br>
 <form method="post" action="?img_id=<?php echo $image['id']; ?>">
-    <!-- <textarea name="comment" class="comme" cols="20" rows="5"></textarea><br> -->
-    <input class="comme" type="text" name="comment" placeholder="type comment here ..."><br>
-    <button  name="submit_comment" type="submit">submit comment</button>
+
     <?php count_likes($image['id']); ?>
-    <button class="b2" type="submit" name="like">like</button>
-    <button class="b2" type="submit" name="del">Delete </button><br>
+    
 </form>
 
 <?php display_comment($image['id']);?>

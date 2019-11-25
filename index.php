@@ -3,7 +3,7 @@
 header("Location: Config/setup.php"); 
 
 ?>
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +12,14 @@ header("Location: Config/setup.php");
     <link type="text/css" href="CSS/style.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body class="welcome">
-    <h1 class="hhh">WELCOME TO CAMAGRU</h1><br>
-    <form class="choose" action="#">
-    <h2 class="fff" class="txt">
-        Already a member? <br><a class="txt2" href="Views/login.php">Login</a>
+<body >
+    <h1 >WELCOME TO CAMAGRU</h1><br>
+    <form >
+    <h2 >
+        Already a member? <br><a class="txt2" href="Forms/login.php">Login</a>
     </h2><br><br><br><br>
-    <h2 class="fff" class="txt">
-            Already a member? <br><a class="txt2" href="Views/register.php">Signup</a>
+    <h2>
+            Already a member? <br><a class="txt2" href="Forms/register.php">Signup</a>
     </h2>
     </form>
 </body>

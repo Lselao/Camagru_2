@@ -52,7 +52,7 @@
 
         // upload image to uploads folder and to database
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $pic_name)) {
-            upload_image("username placeholder...", $pic_name);
+            upload_image($_SESSION['username'], $pic_name);
             $_SESSION['error'] = "The file ". $pic_name . " has been uploaded.";
         } else {
             $_SESSION['error'] = "Error uploading file.";
@@ -68,7 +68,7 @@
         $image_base64 = base64_decode($image_parts[1]);
         $pic_name = "../uploads/" . uniqid() . '.png';
         file_put_contents($pic_name, $image_base64);
-        upload_image("username placeholder...", $pic_name);
+        upload_image($_SESSION['username'], $pic_name);
         $_SESSION['error'] = "The file ". $pic_name . " has been uploaded.";
     }
 

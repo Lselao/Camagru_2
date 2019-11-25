@@ -1,84 +1,12 @@
-/* 
-* {
-    margin: 0px;
-    padding: 0px;
-}
-body {
-    font-size: 120%;
-    background:black;
-}
-.header {
-    width: 30%;
-    margin: 50px auto 0px;
-    color:black;
-    background: black;
-    text-align: center;
-    border: 1px solid #B0C4DE;
-    border-bottom: none;
-    border-radius: 10px 10px 0px 0px;
-    padding: 20px;
-}
-form {
-    width: 30%;
-    margin: 0px auto;
-    padding: 20px;
-    border: 1px solid #B0C4DE;
-    background: orange;
-    border-radius: 0px 0px 10px 10px;
-}
-.input-group {
-    margin: 10px 0px 10px 0px;
-}
-.input-group label{
-    display: block;
-    text-align: left;
-    margin: 3px;
-}
-.input-group input {
-    height: 30px;
-    width: 93%;
-    padding: 5px 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid gray;
-}
-.btn {
-    padding: 10px;
-    font-size: 15px;
-    color: white;
-    background: black;
-    border-radius: 5px;
-}
 
-/* index styling */
 
-/* ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 2px;
-    overflow: hidden;
-    background-color:black;
-    border-radius: 0px 0px 10px 10px;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 13px 14px;
-    /* text-decoration: none; */
-  }
-  
   li a:hover:not(.active) {
-    background-color: #111;
+    background-color: red;
   }
   
   .active {
     background-color: red;
+    
   }
   .Camera {
       width: 400px;
@@ -88,22 +16,13 @@ form {
   }
 
   .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height :200%;
-  width: 100%;
-  }
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 
-  /* cam */
 
-    .booth {
-    width: 400;
-    /* height: 300; */
-    background: #ccc;
-    border: 10px solid #ddd;
-    margin: 0; */
 }
-/* canvas{
-    display: none;
-} */

@@ -81,5 +81,7 @@
 <script src="../JS/sticker.js"></script>
 </div>
 
+<?php include ("../footer.php"); ?> 
+
 </body>
 </html>

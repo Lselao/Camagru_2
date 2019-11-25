@@ -23,7 +23,14 @@
     {
         global $conn;
         
-        $sql = "SELECT * FROM images ORDER BY upload_date DESC";
+        $numperpage = 5;
+        $page = 0;
+        if (isset($_POST["page"])) {
+            $page = $_POST["page"];
+            $page = ($page * $numperpage) - $numperpage;
+        }
+
+        $sql = "SELECT * FROM images ORDER BY upload_date DESC LIMIT {$page},{$numperpage}";
         $stmt= $conn->prepare($sql);
 
         try{

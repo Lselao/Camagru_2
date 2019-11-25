@@ -1,9 +1,8 @@
-<?php
-?>
-  <head>
-      <link rel="stylesheet" type="text/css" href="style.css">   
-    </head>
-<div class="footer">
-  <p> website by Lebogang selao </p>
-  <p>&copy; WeThinkCode_ 2019 camagru<p>
-</div>
+  
+<html>
+        <body>
+        <div class="footer">
+                    <p>@_WeThinkCode 2019   |   Camagru by lmselao</p>
+            </div>
+        </body>
+</html>
