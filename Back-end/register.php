@@ -20,7 +20,6 @@ if (isset($_POST['register']))
     $stmt->bindParam(2, $email);
     $stmt->execute();
 
-    // die(" ". . " " .);
 
     if (strlen($password) <= 5) {
         echo  "Password Must have 5 Characters or more!";

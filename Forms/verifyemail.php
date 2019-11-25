@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <center>
+        
             <div>
                 <?php
                     if (!empty($_SESSION['message'])){
@@ -14,6 +14,6 @@
                     }
                 ?>
             </div>
-        </center>    
+       
     </body>
 </html>

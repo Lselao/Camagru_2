@@ -64,12 +64,12 @@ if (isset($_POST['login']))
         <form  method="post">
             <div class="input-group">
                 <label>Username</label>
-                <input class="row" type="text" name="username" placeholder="Enter Username...">
+                <input class="row" type="text" name="username" placeholder="Enter Username..."maxlength="40" minlength="3">
             </div>
             
             <div class="input-group">
                 <label>Password</label>
-                <input class="row"  type="password" name="password" placeholder="Enter Password...">
+                <input class="row"  type="password" name="password" placeholder="Enter Password..."maxlength="40" minlength="3">
             </div>
             <div class="input-group">
                 <button type="submit" name="login" class="btn">Login</button>
@@ -84,5 +84,7 @@ if (isset($_POST['login']))
         </form>
           
     <div>
+
+    <?php include ("../footer.php"); ?> 
     </body>
 </html>
