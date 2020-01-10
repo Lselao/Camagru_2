@@ -16,7 +16,7 @@
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Imaging</title>
-        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="../styl.css">
      <style type="text/css">
 
         #results { padding:20px; border:1px solid; background:#ccc; }
@@ -24,6 +24,8 @@
     </style>
 
 </head>
+
+
 <body class="round">
 
 <ul>
@@ -81,7 +83,6 @@
 <script src="../JS/sticker.js"></script>
 </div>
 
-<?php include ("../footer.php"); ?> 
-
 </body>
+<?php require ("../footer.php"); ?>
 </html>

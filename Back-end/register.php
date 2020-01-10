@@ -9,8 +9,8 @@
     //is the form been submitted
 if (isset($_POST['register']))
 {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
+    $username = trim(htmlspecialchars($_POST['username']));
+    $email = trim(htmlspecialchars($_POST['username']));
     $password = $_POST['password_1'];
     $password_1 = md5($_POST['password_1']);
     $password_2 = md5($_POST['password_2']);

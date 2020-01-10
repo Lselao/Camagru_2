@@ -1,8 +1,8 @@
 <?php
 // connecting to db
 
-$db_server = "localhost";
-// $db_user = "home";
+// $db_server = "localhost";
+$db_user = "home";
 $db_user = "root";
 $db_name = "camagru";
 $db_password = "root1";

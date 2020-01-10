@@ -11,7 +11,7 @@ if (isset($_POST['submit_comment']))
     }
     else
     {
-        equire("../Config/database.php");
+        require("../Config/database.php");
         $sql = "INSERT INTO comments (username, image_id, comment) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1, $login_username);
