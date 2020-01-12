@@ -15,19 +15,14 @@
       margin: 30px auto 0px;
   }
 
-  .footer 
-  {
-    position: relative;
+  .footer {
+    position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
-    background-color:white;
-    color:black;
+    background-color: red;
+    color: white;
     text-align: center;
-    clear: both;
-    margin-top: -200;
-    height: 200;
-  }
-
- 
 
 
+}

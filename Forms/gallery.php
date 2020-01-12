@@ -27,7 +27,7 @@ if (isset($_SESSION['login']))
 <html>
     <head>
         <title>Imaging</title>
-        <link rel="stylesheet" type="text/css" href="../styl.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
      <style type="text/css">
 
         #results { padding:20px; border:1px solid; background:#ccc; }
